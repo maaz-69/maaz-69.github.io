@@ -3,35 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maaz Awan | Portfolio</title>
+  <title>Maaz Awan | AI Specialist Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; background: #f5f7fa; color: #333; }
-    header { background: #0073e6; color: #fff; padding: 40px 20px; text-align: center; }
-    header h1 { margin: 0; font-size: 2.5rem; }
-    header p { font-size: 1.2rem; }
-    nav { background: #005bb5; padding: 10px; text-align: center; }
-    nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 50px 20px; max-width: 900px; margin: auto; }
-    h2 { text-align: center; color: #0073e6; margin-bottom: 20px; }
-    .skills, .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .card h3 { margin-top: 0; }
-    footer { text-align: center; padding: 20px; background: #0073e6; color: #fff; }
-    .btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #0073e6; color: #fff;
-           text-decoration: none; border-radius: 5px; transition: 0.3s; }
-    .btn:hover { background: #005bb5; }
+    /* General Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #fff; background: #0a0a0a; }
+    a { text-decoration: none; }
+
+    /* Background Hero Section */
+    header {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; color: #fff; position: relative;
+    }
+    header::after {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    header h1, header p, header a { position: relative; z-index: 1; }
+    header h1 { font-size: 3rem; animation: fadeDown 1.5s ease; }
+    header p { font-size: 1.3rem; margin: 15px 0; animation: fadeUp 2s ease; }
+    header .btn { padding: 12px 25px; background: #0073e6; color: #fff; border-radius: 5px; font-weight: bold; animation: fadeIn 3s ease; }
+    header .btn:hover { background: #005bb5; }
+
+    /* Navbar */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; background: rgba(0,0,0,0.85);
+      padding: 10px; text-align: center; z-index: 999;
+    }
+    nav a { color: #fff; margin: 0 15px; font-weight: bold; transition: 0.3s; }
+    nav a:hover { color: #00b4ff; }
+
+    /* Sections */
+    section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 40px; color: #00b4ff; font-size: 2rem; }
+
+    /* Cards */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .card {
+      background: #111; padding: 20px; border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 1.5s ease;
+    }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 6px 15px rgba(0,0,0,0.7); }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #000; color: #aaa; }
+
+    /* Animations */
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Maaz Awan</h1>
-    <p>AI Specialist | Machine Learning | Full-Stack Developer</p>
-  </header>
-
-  <!-- Navigation -->
+  <!-- Navbar -->
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -39,62 +70,57 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- Hero Section -->
+  <header>
+    <h1>Hi, I'm Maaz Awan 👋</h1>
+    <p>AI Specialist | Machine Learning | Full-Stack Developer</p>
+    <a class="btn" href="https://www.fiverr.com/yourfiverrusername" target="_blank">Hire Me on Fiverr</a>
+  </header>
+
   <!-- About -->
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      Hi! I'm <strong>Maaz Awan</strong>, a passionate AI Specialist and Developer. 
-      I build intelligent systems, web applications, and automation tools to solve real-world problems. 
-      With expertise in Machine Learning, Web Development, and Automation, 
-      I help businesses and clients bring their ideas to life.
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      I'm <b>Maaz Awan</b>, an AI Specialist passionate about building intelligent systems, automation bots, and modern web applications.
+      I focus on delivering innovative, high-performance solutions in <b>AI, Machine Learning, and Web Development</b> that solve real-world problems.
     </p>
   </section>
 
   <!-- Skills -->
   <section id="skills">
     <h2>My Skills</h2>
-    <div class="skills">
+    <div class="grid">
       <div class="card"><h3>Machine Learning</h3><p>Python, Scikit-learn, Pandas, NumPy, Matplotlib</p></div>
       <div class="card"><h3>Web Development</h3><p>PHP, Flask, MySQL, HTML, CSS, JavaScript</p></div>
       <div class="card"><h3>AI & Automation</h3><p>Chatbots, Bots, Web Scraping, Auto-Purchase Systems</p></div>
-      <div class="card"><h3>Other Tools</h3><p>GitHub, XAMPP, PyQt5, Selenium</p></div>
+      <div class="card"><h3>Other Tools</h3><p>GitHub, PyQt5, XAMPP, Selenium</p></div>
     </div>
   </section>
 
   <!-- Projects -->
   <section id="projects">
     <h2>Featured Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>AI-Powered Job Recommendation System</h3>
-        <p>Full-stack web app using PHP & MySQL that recommends jobs to students based on their skills and preferences.</p>
-      </div>
-      <div class="card">
-        <h3>Drone Delivery System</h3>
-        <p>Python-based system using A*, BFS, DFS, and other search algorithms for intelligent delivery pathfinding.</p>
-      </div>
-      <div class="card">
-        <h3>Restaurant Order Management</h3>
-        <p>GUI-based food ordering app with real-time notifications, order history, and kitchen dashboard.</p>
-      </div>
-      <div class="card">
-        <h3>Automation Bots</h3>
-        <p>Bots for auto-purchase, data scraping, visa appointment booking, and prediction systems.</p>
-      </div>
+    <div class="grid">
+      <div class="card"><h3>AI-Powered Job Recommendation System</h3><p>Full-stack system using PHP & MySQL recommending jobs based on student skills.</p></div>
+      <div class="card"><h3>Drone Delivery System</h3><p>Python-based delivery pathfinding with A*, BFS, DFS, and Greedy algorithms.</p></div>
+      <div class="card"><h3>Restaurant Order Management</h3><p>Interactive GUI system with live order tracking, history, and admin features.</p></div>
+      <div class="card"><h3>Automation Bots</h3><p>Custom bots for scraping, automation, appointment booking, and predictions.</p></div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <p>If you'd like to work with me, feel free to reach out!</p>
-    <p>Email: <a href="mailto:maazawan@example.com">maazawan@example.com</a></p>
-    <a class="btn" href="https://www.fiverr.com/yourfiverrusername" target="_blank">Hire Me on Fiverr</a>
+    <p style="text-align:center;">Let's work together! Reach out below:</p>
+    <p style="text-align:center; margin-top:10px;">📧 Email: <a href="mailto:maazawan@example.com" style="color:#00b4ff;">maazawan@example.com</a></p>
+    <p style="text-align:center; margin-top:10px;">
+      <a class="btn" href="https://www.fiverr.com/yourfiverrusername" target="_blank">Hire Me on Fiverr</a>
+    </p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Maaz Awan | All Rights Reserved</p>
+    <p>© 2025 Maaz Awan | Designed with ❤️</p>
   </footer>
 
 </body>
