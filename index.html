@@ -7,7 +7,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #fff; }
-    
+
     /* Background Slideshow */
     body::before {
       content: "";
@@ -17,13 +17,15 @@
       background-size: cover;
       background-position: center;
       z-index: -1;
-      animation: changeBg 15s infinite;
+      animation: changeBg 25s infinite;
     }
 
     @keyframes changeBg {
       0%   { background-image: url('https://miro.medium.com/v2/resize:fit:1200/1*D5Oj9nVvVYp7bi5v7XHkBA.gif'); }
-      33%  { background-image: url('https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/ai-ml-1.gif'); }
-      66%  { background-image: url('https://www.springboard.com/blog/wp-content/uploads/2022/06/machine-learning-engineer-vs-data-scientist.jpg'); }
+      20%  { background-image: url('https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/ai-ml-1.gif'); }
+      40%  { background-image: url('https://www.springboard.com/blog/wp-content/uploads/2022/06/machine-learning-engineer-vs-data-scientist.jpg'); }
+      60%  { background-image: url('https://cdn.dribbble.com/users/2131993/screenshots/15692699/media/0b5059b3f5a5a21bb0a6a2d3c9cf8e94.gif'); }
+      80%  { background-image: url('https://www.kdnuggets.com/wp-content/uploads/machine-learning-ai.jpg'); }
       100% { background-image: url('https://miro.medium.com/v2/resize:fit:1200/1*D5Oj9nVvVYp7bi5v7XHkBA.gif'); }
     }
 
