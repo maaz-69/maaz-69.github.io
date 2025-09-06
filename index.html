@@ -8,25 +8,19 @@
   <style>
     /* General Styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #fff; background: #0a0a0a; }
+    body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #fff; position: relative; }
     a { text-decoration: none; }
 
-    /* Background Hero Section */
-    header {
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; color: #fff; position: relative;
+    /* Background Slideshow */
+    .bg-slideshow {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: -1; overflow: hidden;
     }
-    header::after {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
+    .bg-slideshow img {
+      position: absolute; width: 100%; height: 100%; object-fit: cover;
+      opacity: 0; transition: opacity 1.5s ease-in-out;
     }
-    header h1, header p, header a { position: relative; z-index: 1; }
-    header h1 { font-size: 3rem; animation: fadeDown 1.5s ease; }
-    header p { font-size: 1.3rem; margin: 15px 0; animation: fadeUp 2s ease; }
-    header .btn { padding: 12px 25px; background: #0073e6; color: #fff; border-radius: 5px; font-weight: bold; animation: fadeIn 3s ease; }
-    header .btn:hover { background: #005bb5; }
+    .bg-slideshow img.active { opacity: 1; }
 
     /* Navbar */
     nav {
@@ -37,30 +31,44 @@
     nav a:hover { color: #00b4ff; }
 
     /* Sections */
-    section { padding: 80px 20px; max-width: 1100px; margin: auto; }
-    h2 { text-align: center; margin-bottom: 40px; color: #00b4ff; font-size: 2rem; }
+    header, section, footer {
+      padding: 80px 20px; max-width: 1100px; margin: auto; text-align: center;
+      background: rgba(0,0,0,0.6); border-radius: 12px; margin-top: 80px;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 15px; }
+    header p { font-size: 1.3rem; margin-bottom: 20px; }
+    h2 { margin-bottom: 30px; color: #00b4ff; font-size: 2rem; }
 
     /* Cards */
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
     .card {
-      background: #111; padding: 20px; border-radius: 12px;
+      background: rgba(0,0,0,0.7); padding: 20px; border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
       transition: transform 0.3s, box-shadow 0.3s;
-      animation: fadeInUp 1.5s ease;
     }
     .card:hover { transform: translateY(-10px); box-shadow: 0 6px 15px rgba(0,0,0,0.7); }
 
-    /* Footer */
-    footer { text-align: center; padding: 20px; background: #000; color: #aaa; }
+    /* Buttons */
+    .btn {
+      display: inline-block; margin-top: 15px; padding: 12px 25px;
+      background: #0073e6; color: #fff; border-radius: 5px; font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #005bb5; }
 
-    /* Animations */
-    @keyframes fadeDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    /* Footer */
+    footer { text-align: center; padding: 20px; margin-top: 50px; background: rgba(0,0,0,0.7); color: #aaa; border-radius: 12px; }
   </style>
 </head>
 <body>
+
+  <!-- Background Slideshow -->
+  <div class="bg-slideshow">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80" class="active" alt="AI Background 1">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80" alt="AI Background 2">
+    <img src="https://images.unsplash.com/photo-1555255707-c07966088b59?auto=format&fit=crop&w=1600&q=80" alt="AI Background 3">
+    <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?auto=format&fit=crop&w=1600&q=80" alt="AI Background 4">
+  </div>
 
   <!-- Navbar -->
   <nav>
@@ -73,14 +81,14 @@
   <!-- Hero Section -->
   <header>
     <h1>Hi, I'm Maaz Awan 👋</h1>
-    <p>AI Specialist | Machine Learning | Full-Stack Developer</p>
+    <p>AI Specialist | Machine Learning | Web Developer</p>
     <a class="btn" href="https://www.fiverr.com/yourfiverrusername" target="_blank">Hire Me on Fiverr</a>
   </header>
 
   <!-- About -->
   <section id="about">
     <h2>About Me</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
+    <p>
       I'm <b>Maaz Awan</b>, an AI Specialist passionate about building intelligent systems, automation bots, and modern web applications.
       I focus on delivering innovative, high-performance solutions in <b>AI, Machine Learning, and Web Development</b> that solve real-world problems.
     </p>
@@ -111,9 +119,9 @@
   <!-- Contact -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <p style="text-align:center;">Let's work together! Reach out below:</p>
-    <p style="text-align:center; margin-top:10px;">📧 Email: <a href="mailto:maazawan@example.com" style="color:#00b4ff;">maazawan@example.com</a></p>
-    <p style="text-align:center; margin-top:10px;">
+    <p>Let's work together! Reach out below:</p>
+    <p>📧 Email: <a href="mailto:maazawan@example.com" style="color:#00b4ff;">maazawan@example.com</a></p>
+    <p>
       <a class="btn" href="https://www.fiverr.com/yourfiverrusername" target="_blank">Hire Me on Fiverr</a>
     </p>
   </section>
@@ -122,6 +130,18 @@
   <footer>
     <p>© 2025 Maaz Awan | Designed with ❤️</p>
   </footer>
+
+  <!-- JS for Background Slideshow -->
+  <script>
+    const slides = document.querySelectorAll('.bg-slideshow img');
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 5000); // Change every 5 sec
+  </script>
 
 </body>
 </html>
